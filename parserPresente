@@ -1,0 +1,63 @@
+presentesimple
+  = frase:(presentesimpleinter / presentesimpleaf / presentesimplenega)
+  {return frase+" Esta frase está en presente simple"}
+presentesimpleaf
+  = (uno:propersonal dos:_ tres:vregular{return uno+dos+tres} / uno:propersonalter dos:_ tres:vregulartercera{return uno+dos+tres})
+presentesimplenega
+  = uno:propersonal dos:_ tres:do cuatro:_ cinco:not seis:_ siete:vregular
+    {return uno+dos+tres+cuatro+cinco+seis+siete} /
+    uno:propersonalter dos:_ tres:doter cuatro:_ cinco:not seis:_ siete:vregular
+    {return uno+dos+tres+cuatro+cinco+seis+siete}
+presentesimpleinter
+  = uno:do dos:_ tres:not* cuaatro:_ cinco:propersonal seis:_ siete:vregular ocho:_ nueve:"?"
+    {return uno+dos+tres+cuatro+cinco+seis+siete+ocho+nueve} /
+    uno:doter dos:_ tres:not* cuatro:_ cinco:propersonalter seis:_ siete:vregular ocho:_ nueve:"?"
+    {return uno+dos+tres+cuatro+cinco+seis+siete+ocho+nueve}
+sustantivos
+  = "book"/"money"/ "table"
+
+pronombre
+  = propersonal/proacusativo/proposesivo/proreflexivos
+propersonal
+  = "i"/"we"/"you"/"they"
+propersonalter
+  = "he"/"she"/"it"
+proacusativo
+  = "me"/"you"/"him"/"her"/"it"/"us"/"you"/"them"
+adposesivo
+  = "my"/"your"/"his"/"her"/"its"/ "our"/"your"/"their"
+proposesivo
+  = "mine"/"yours"/"his"/"hers"/"ours"/"yours"/"theirs"
+proreflexivos
+  = "myself"/"yourself"/"himself"/"herself"/"itself"/"ourselves"/"yourselves"/"themselves"
+
+sustantivo
+  = [A-Za-z0-9_]+
+adjetivos
+  = "tall"/"good"/"beautiful"/"white"
+
+verbo
+  =vregular/vtobe/*/vtodo/vtohave*/
+
+vregular
+  = "play"/"dance"/"paint"/"ask"/"close"/"talk"/"walk"
+vregulartercera
+  = "plays"/"dances"/"paints"/"asks"/"closes"/"talks"
+
+vtobe
+  = (propersonal auxiliar)/(propersonal auxiliar not)
+vtobenegativo
+  = auxiliar propersonal
+
+auxiliar
+  = "is"/ "am"/"are"
+not
+ ="not"
+do
+  ="do"
+doter
+  ="does"
+
+
+_ "whitespace"
+  = [ \t\n\r]*
