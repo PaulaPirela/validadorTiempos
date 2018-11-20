@@ -141,7 +141,7 @@ window.PARSER = /*
         peg$startRuleFunctions = { presentesimple: peg$parsepresentesimple },
         peg$startRuleFunction  = peg$parsepresentesimple,
 
-        peg$c0 = function(frase) {return frase+" Esta frase está en presente simple"},
+        peg$c0 = function(frase) {return "Esta frase está en presente simple"},
         peg$c1 = function(uno, dos, tres) {return uno+dos+tres},
         peg$c2 = function(uno, dos, tres, cuatro, cinco, seis, siete) {return uno+dos+tres+cuatro+cinco+seis+siete},
         peg$c3 = "?",
